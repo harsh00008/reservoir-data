@@ -9,9 +9,6 @@ $(document).ready(function(){
     
     $('#map').fadeIn(1000);
     
-    //render data from locations.json to the ui
-    displayReservoirInformation();
-    
     // simulating remote json call here for live data
     setInterval(function(){
         displayReservoirInformation();
@@ -134,6 +131,11 @@ function populateHighChart(domId, chartTitle, reservoirValue, capacity, average,
         title: {
             text: ''
         },
+        xAxis:{
+            title: {
+                text: chartTitle
+            }
+        },
         yAxis: {
             title: {
                 text: ''
@@ -151,7 +153,6 @@ function populateHighChart(domId, chartTitle, reservoirValue, capacity, average,
         },
         series: [{
             name: chartTitle,
-            colorByPoint: true,
             data: [ reservoirValue]
         }]
         
