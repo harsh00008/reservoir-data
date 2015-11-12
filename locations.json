@@ -1,0 +1,150 @@
+{
+	"locations": {
+		"location":[
+		{
+			"id": 1,
+			"address": "Exchequer",
+			"latitude": 37.659, 	
+			"longitude": -120.254,
+            "latPath": [0,1,1],
+            "longPath": [1,1,6],
+            "capacity":     1025,
+            "histavg": 154,
+            "left": -55,
+            "top": -210
+		},
+		{
+			"id": 2,
+			"address": "Don Pedro",
+			"latitude": 37.7415,
+			"longitude": -120.3735,
+            "latPath": [2,2,3],
+            "longPath": [0,4,4],
+            "capacity": 2030,
+            "histavg": 995,
+            "left": -80,
+            "top": -250
+		},
+		{
+			"id": 3,
+			"address": "Folsom Lake",
+			"latitude": 38.7206,
+			"longitude": -121.1339,
+            "latPath": [2,2,3],
+            "longPath": [0,2,2],
+            "capacity": 977,
+            "histavg": 283,
+            "left": -85,
+            "top": -250
+		},
+		{
+			"id": 4,
+			"address": "Lake Oroville",
+			"latitude": 39.5372,
+			"longitude": -121.4833,
+            "latPath": [0,2,2],
+            "longPath": [-2,-2,-5.2],
+            "capacity": 3538,
+            "histavg": 1627,
+            "left": -140,
+            "top": -160
+		},
+		{
+			"id": 5,
+			"address": "Lake Shasta",
+			"latitude": 40.7602,
+			"longitude": -122.3719,
+            "latPath": [1,1,2],
+            "longPath": [0,0.5,0.5],
+            "capacity": 4552,
+            "histavg": 2367,
+            "left": -90,
+            "top": -250
+		},
+		{
+			"id": 6,
+			"address": "Trinity Lake",
+			"latitude": 40.8225,
+			"longitude": -122.7650,
+            "latPath": [1,1,2],
+            "longPath": [0,-2,-2],
+            "capacity": 2448,
+            "histavg": 759,
+            "left": -85,
+            "top": -250
+		},
+		{
+			"id": 7,
+			"address": "New Melones",
+			"latitude": 37.9990,
+			"longitude": -120.5212,
+            "latPath": [0,1,1],
+            "longPath": [-1,-1,-3.2],
+            "capacity": 2420,
+            "histavg": 484,
+            "left": -140,
+            "top": -90
+		}, 
+		{
+			"id": 8,
+			"address": "San Luis",
+			"latitude": 37.0679,
+			"longitude": -121.0810,
+            "latPath": [0,-2,-2],
+            "longPath": [-1,-1,-2],
+            "capacity": 2039,
+            "histavg": 673,
+            "left": -140,
+            "top": -50
+		},
+		{
+			"id": 9,
+			"address": "Millerton Lake",
+			"latitude": 37.0425,
+			"longitude": -119.6545,
+            "latPath": [-1,-1,-2.5],
+            "longPath": [0,-1.5,-1.5],
+            "capacity": 520,
+            "histavg": 447,
+            "left": -88,
+            "top": 0
+		},
+		{
+			"id": 10,
+			"address": "Lake Perris",
+			"latitude": 33.8570,
+			"longitude": -117.1750,
+            "latPath": [-1,-1,-1],
+            "longPath": [0,2,2],
+            "capacity": 200,
+            "histavg": 92,
+            "left": -20,
+            "top": -80
+		},
+		{
+			"id": 11,
+			"address": "Castaic Lake",
+			"latitude": 34.5247,
+			"longitude": -118.5876,
+            "latPath": [-1,-2,-2],
+            "longPath": [0,0,0],
+            "capacity": 325,
+            "histavg": 143,
+            "left": -65,
+            "top": 0
+		},
+		{
+			"id": 12,
+			"address": "Pine Flat",
+			"latitude": 36.8325,
+			"longitude": -119.3259,
+            "latPath": [0,-1.5,-1.5],
+            "longPath": [1,1,2.5],
+            "capacity": 1000,
+            "histavg": 350,
+            "left": -60,
+            "top": -180
+		}
+		]
+	}
+}

@@ -1,0 +1,16 @@
+#map{
+    width: 100%;
+    min-height: 100%;
+    margin-bottom: 0;
+}
+
+.info-container{
+    z-index: 1000;
+    max-height: 300px;
+    max-width: 150px;
+}
+
+#legend{
+    background-color: white;
+    padding: 10px;
+}
