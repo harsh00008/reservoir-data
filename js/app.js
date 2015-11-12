@@ -1,14 +1,13 @@
 $(document).ready(function(){
     
     chart = [];
-    
-    loadLiquidFillGauge('gauge-0', 65);
-    
     // load gauges
     populateGauges();
     
     // Initialize and plot the map
     populateMap();
+    
+    $('#map').fadeIn(1000);
     
     //render data from locations.json to the ui
     displayReservoirInformation();
@@ -17,6 +16,7 @@ $(document).ready(function(){
     setInterval(function(){
         displayReservoirInformation();
     },5000);
+    
     
 });
 
@@ -31,8 +31,6 @@ function displayReservoirInformation(){
                                 updateGauge('gauge-' + data.id, ((newY/capacity) * 100));
                                 populateHighChart('chart-' + data.id, data.address, newY, capacity, data.histavg, data.id);    
                             }
-                            
-                            
               });
         });
 }
@@ -53,20 +51,14 @@ function loadGaugeConfig(){
 
 //initialize maps
 function initializeMaps() {
-    
-    populateHighChart('chart', 'Reservoir Name', 1000, 2000, 1200, 0);   
-    
-    
     var mapOptions = {
       zoom: 7,
-        //36.7494314,-118.3109355
       center: {lat: 36.7494314, lng: -118.3109355},
       mapTypeId: google.maps.MapTypeId.TERRAIN
     };
     map = new google.maps.Map(document.getElementById('map'),mapOptions);
-    
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('legend'));
-    $('#map').width($(window).width()).height($(window).height());
+    $('#map').width($(window).width()).height($(window).height() - 200);
 };
 
 
@@ -79,7 +71,7 @@ function populateMap(){
             //get location from data json object - data.latitude, data.longitude
             var latLng = new google.maps.LatLng(data.latitude, data.longitude); 
             //create circle as per revenue
-            var insideContent = "<div class=\"info-container\" id=\"info-"+data.id+"\" > " +
+            var insideContent = "<div class=\"info-container text-center\" id=\"info-"+data.id+"\" > " +
                     "<div class=\"charts-wrapper\"> " +
                         "<div id=\"chart-"+data.id+"\" class=\"highchart\" data-chart=\""+data.id+"\"> " +
                         "</div>" +
@@ -89,9 +81,8 @@ function populateMap(){
                             "<svg id=\"gauge-"+data.id+"\" width=\"97%\" height=\"50\"></svg>" +
                     "</div>" +
                 "</div>";
-              var temp = "<div class=\"\"";
               overlay = new CustomMarker(latLng, map);
-                var iw = new google.maps.InfoWindow({content: insideContent, pixelOffset: new google.maps.Size(5,0)});
+                var iw = new google.maps.InfoWindow({content: insideContent, pixelOffset: new google.maps.Size(6,0)});
                 iw.open(map, overlay);
                 google.maps.event.addListener(overlay, "click", function() {
                   iw.open(map, overlay);
@@ -107,7 +98,6 @@ function populateMap(){
 
 //function to populate Guages
 function populateGauges(){
-    loadLiquidFillGauge('gauge-0', 67);
     $.getJSON("locations.json", function(json) {
               //parse through locations
               $.each(json.locations.location, function(key, data) {
@@ -119,6 +109,7 @@ function populateGauges(){
               });
             
         });
+    
     
 }
 
@@ -139,12 +130,10 @@ function populateHighChart(domId, chartTitle, reservoirValue, capacity, average,
             height: 150,
             width: 150,
             type: 'column'
-            
         },
         title: {
             text: ''
         },
-       
         yAxis: {
             title: {
                 text: ''
@@ -156,10 +145,9 @@ function populateHighChart(domId, chartTitle, reservoirValue, capacity, average,
                 zIndex: 100 // To not get stuck below the regular plot lines
             }],
             max : capacity
-
         },
         legend: {
-            enabled: true
+            enabled: false
         },
         series: [{
             name: chartTitle,

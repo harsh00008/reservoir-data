@@ -6,21 +6,17 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+         
         <div class="">
             
-                
-                <div id="map">
-                
+                <div class="large-12 columns text-center">
+                    <h1>Reservoir Conditions</h1>
                 </div>
-                 <div id="legend">
-                     <div class="charts-wrapper"> <h2>Legend</h2>" +
-                        <div id="chart" class="highchart" data-id="0">
-                        </div>
-                    </div>
-                    <div class="d3-container">
-                    
-                            <svg id="gauge-0" width="97%" height="50"></svg>
-                            <p>Reservoir filled</p></div>
+                
+                <div id="map"></div>
+                
+                <div id="legend" class="text-center">
+                    <img src="img/legend.png">
                 </div>
             
             
@@ -33,5 +29,16 @@
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="js/custom-marker.js"></script>
         <script src="js/app.js"></script>
+        <script type="text/javascript">
+            var gauge1 = loadLiquidFillGauge("gauge-0", 55);
+            var config1 = liquidFillGaugeDefaultSettings();
+            config1.circleColor = "#FF7777";
+            config1.textColor = "#FF4444";
+            config1.waveTextColor = "#FFAAAA";
+            config1.waveColor = "#FFDDDD";
+            config1.circleThickness = 0.2;
+            config1.textVertPosition = 0.2;
+            config1.waveAnimateTime = 1000;
+        </script>
     </body>
 </html>
